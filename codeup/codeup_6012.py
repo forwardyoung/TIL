@@ -1,0 +1,6 @@
+aa = input()
+bb = input()
+정수1 = int(aa)
+정수2 = int(bb)
+print((정수1))
+print((정수2))

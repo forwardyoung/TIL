@@ -1,0 +1,3 @@
+abc = input()
+print(abc)
+
