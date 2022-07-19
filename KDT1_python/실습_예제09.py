@@ -21,6 +21,7 @@ fruit_count = {}
     # else:
     #   fruit_count[fruit] += 1
 # 출력값은 {'Salal berry': 1} 만 나온다. 딕셔너리에 키 값이 추가되지 않았기 때문.
+
 for fruit in fruits:
     if fruit not in fruit_count:
         fruit_count[fruit] = 1
