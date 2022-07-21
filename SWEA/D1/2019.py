@@ -6,6 +6,6 @@ n = int(input())
 for i in range(n+1):
     print(2**i, end=' ')
     # i는 0부터 8까지.
-    # 2의 0제곱은 1!!
+    # 2의 0제곱은 1!!!
 
     
