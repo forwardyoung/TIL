@@ -65,7 +65,7 @@ return max_total
 
 이때 행과 열의 변량인 -1, +1을 **델타(delta)값**이라 한다.
 
-![image-20220808121712548](알고리즘_Brute-force & Delta Search.assets/image-20220808121712548.png)
+![](알고리즘_Brute-force & Delta Search.assets/델타 탐색.png)
 
 1️⃣ 델타값 정의(상하좌우)
 
@@ -76,7 +76,7 @@ dy = [0, 0, -1, 1]
 == > [상, 하, 좌, 우]
 ```
 
-![image-20220808121722770](알고리즘_Brute-force & Delta Search.assets/image-20220808121722770.png)
+![](알고리즘_Brute-force & Delta Search.assets/델타값 정의.png)
 
 2️⃣ 이차원 리스트 순회 및 델타값을 이용해 상하좌우 이동
 
@@ -120,7 +120,7 @@ for i in range(4):
 
 ⚠️ 상하좌우로 이동 후 범위를 벗어나지 않는지 확인 및 갱신하기
 
-![image-20220808121729043](알고리즘_Brute-force & Delta Search.assets/image-20220808121729043.png)
+![](알고리즘_Brute-force & Delta Search.assets/범위 확인.png)
 
 ```python
 # 1. 델타값을 이용해 상하좌우 이동
@@ -136,4 +136,4 @@ for i in range(4):
 
 📍 **상하좌우 + 대각선**의 8방향 델타값
 
-![image-20220808121740151](알고리즘_Brute-force & Delta Search.assets/image-20220808121740151.png)
+![](알고리즘_Brute-force & Delta Search.assets/8방향 델타값.png)
