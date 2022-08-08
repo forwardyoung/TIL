@@ -65,7 +65,7 @@ return max_total
 
 이때 행과 열의 변량인 -1, +1을 **델타(delta)값**이라 한다.
 
-![델타 탐색](알고리즘_Brute-force & Delta Search.assets/델타 탐색.png)
+![델타 탐색](https://github.com/forwardyoung/TIL/blob/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98_Brute-force%20%26%20Delta%20Search.assets/%EB%8D%B8%ED%83%80%20%ED%83%90%EC%83%89.png)
 
 1️⃣ 델타값 정의(상하좌우)
 
@@ -120,7 +120,7 @@ for i in range(4):
 
 ⚠️ 상하좌우로 이동 후 범위를 벗어나지 않는지 확인 및 갱신하기
 
-![](알고리즘_Brute-force & Delta Search.assets/범위 확인.png)
+![범위 확인](https://github.com/forwardyoung/TIL/blob/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98_Brute-force%20%26%20Delta%20Search.assets/%EB%B2%94%EC%9C%84%20%ED%99%95%EC%9D%B8.png)
 
 ```python
 # 1. 델타값을 이용해 상하좌우 이동
@@ -136,4 +136,4 @@ for i in range(4):
 
 📍 **상하좌우 + 대각선**의 8방향 델타값
 
-![](알고리즘_Brute-force & Delta Search.assets/8방향 델타값.png)
+![8방향 델타값](https://github.com/forwardyoung/TIL/blob/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98_Brute-force%20%26%20Delta%20Search.assets/8%EB%B0%A9%ED%96%A5%20%EB%8D%B8%ED%83%80%EA%B0%92.png)
