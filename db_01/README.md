@@ -130,7 +130,7 @@ sido
 
 ### 자유롭게 조합해서 원하는 데이터를 출력해보세요.
 
-> 예) 허리 둘레가 65.9이상이면서 몸무게가 50 이하인 사람의 수
+> 1) 허리 둘레가 65.9이상이면서 몸무게가 50 이하인 사람의 수
 ```sql
 SELECT COUNT(*) FROM healthcare WHERE waist >= 65.9 AND weight <= 50;
 ```
@@ -139,4 +139,32 @@ SELECT COUNT(*) FROM healthcare WHERE waist >= 65.9 AND weight <= 50;
 COUNT(*)
 --------
 172525
+```
+
+> 2) BMI 지수가 23이상인 경우 비만이다. 비만인 사람의 수는?
+```sql
+SELECT COUNT(*) FROM healthcare WHERE weight*10000/(height*height) > 25;
+```
+
+```
+COUNT(*)
+--------
+595504
+```
+
+> 3) weight*10000/(height*height)를 BMI 지수로 정의하고, BMI와 몸무게, 키 컬럼 값을 7개만 조회하면?
+```sql
+SELECT weight*10000/(height*height) AS BMI, weight, height FROM healthcare LIMIT 7;
+```
+
+```
+BMI  weight  height
+---  ------  ------
+22   60      165
+28   65      150
+22   55      155
+27   70      160
+20   50      155
+24   85      185
+29   80      165
 ```
