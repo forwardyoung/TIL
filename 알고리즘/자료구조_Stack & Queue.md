@@ -12,7 +12,7 @@
 
 ### 📚**스택 자료구조의 대표 동작**
 
-![](C:\Users\726jo\OneDrive\바탕 화면\TIL\알고리즘\자료구조_Stack & Queue.assets\스택 대표동작.png)
+![](https://github.com/forwardyoung/TIL/blob/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0_Stack%20%26%20Queue.assets/%EC%8A%A4%ED%83%9D%20%EB%8C%80%ED%91%9C%EB%8F%99%EC%9E%91.png)
 
 ### 🔎 왜 Stack을 써야 할까(why)?
 
@@ -25,7 +25,7 @@
 
 > 스택 자료구조 쉽게 이해하기
 
-![](C:\Users\726jo\OneDrive\바탕 화면\TIL\알고리즘\자료구조_Stack & Queue.assets\스택 브라우저.png)
+![](https://github.com/forwardyoung/TIL/blob/master/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0_Stack%20%26%20Queue.assets/%EC%8A%A4%ED%83%9D%20%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80.png)
 
 ### 2️⃣ 마무리 되지 않은 일을 임시 저장
 
