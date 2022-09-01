@@ -61,7 +61,7 @@
 
     
 
-  ![image-20220901134302249](C:\Users\726jo\AppData\Roaming\Typora\typora-user-images\image-20220901134302249.png)
+  ![](https://github.com/forwardyoung/TIL/blob/master/WEB/Web_Intro.assets/HTML%201.png)
 
 📍 **head 예시**
 
@@ -103,7 +103,7 @@
 
 📍 **요소(element)**
 
-![image-20220901140224830](C:\Users\726jo\AppData\Roaming\Typora\typora-user-images\image-20220901140224830.png)
+![](https://github.com/forwardyoung/TIL/blob/master/WEB/Web_Intro.assets/%EC%9A%94%EC%86%8C.png)
 
 `HTML의 요소는 태그와 내용(contents)로 구성되어 있다.`
 
@@ -114,7 +114,7 @@
 
 📍 **속성(attribute)**
 
-![image-20220901140838275](C:\Users\726jo\AppData\Roaming\Typora\typora-user-images\image-20220901140838275.png)
+![](https://github.com/forwardyoung/TIL/blob/master/WEB/Web_Intro.assets/%EC%86%8D%EC%84%B1.png)
 
 `태그별로 사용할 수 있는 속성은 다르다.`
 
@@ -160,7 +160,7 @@
 
 🔤 **텍스트 요소**
 
-![image-20220901151510986](C:\Users\726jo\AppData\Roaming\Typora\typora-user-images\image-20220901151510986.png)
+![](https://github.com/forwardyoung/TIL/blob/master/WEB/Web_Intro.assets/%ED%85%8D%EC%8A%A4%ED%8A%B8%20%EC%9A%94%EC%86%8C.png)
 
 `&nbsp;` : 띄어쓰기
 
@@ -170,11 +170,11 @@
 
 `<!-- 주석 -->`
 
-![image-20220901163606894](C:\Users\726jo\AppData\Roaming\Typora\typora-user-images\image-20220901163606894.png)
+![](https://github.com/forwardyoung/TIL/blob/master/WEB/Web_Intro.assets/%EC%98%88%EC%8B%9C.png)
 
 🔠 **그룹 컨텐츠**
 
-![image-20220901174726695](C:\Users\726jo\AppData\Roaming\Typora\typora-user-images\image-20220901174726695.png)
+![](https://github.com/forwardyoung/TIL/blob/master/WEB/Web_Intro.assets/%EA%B7%B8%EB%A3%B9%20%EC%BB%A8%ED%85%90%EC%B8%A0.png)
 
 🍯 **[HTML 태그</> 더 알아보기](https://inpa.tistory.com/entry/HTML-%F0%9F%8F%B7%EF%B8%8F-%ED%83%9C%EA%B7%B8-%EC%9A%94%EC%95%BD%ED%91%9C?category=890791)**
 
@@ -186,7 +186,7 @@
 >
 > : 스타일을 지정하기 위한 언어 ➡️ 선택하고 스타일을 지정
 
-![image-20220901164800802](C:\Users\726jo\AppData\Roaming\Typora\typora-user-images\image-20220901164800802.png)
+![](https://github.com/forwardyoung/TIL/blob/master/WEB/Web_Intro.assets/CSS.png)
 
 - CSS 구문은 선택자를 통해 스타일을 지정할 HTML 요소를 **선택**
 - 중괄호 안에서는 속성과 값, 하나의 쌍으로 이루어진 선언을 진행
@@ -220,11 +220,11 @@
 
 - styles : 해당 요소에 선언된 모든 CSS
 
-![image-20220901171429731](C:\Users\726jo\AppData\Roaming\Typora\typora-user-images\image-20220901171429731.png)
+![](https://github.com/forwardyoung/TIL/blob/master/WEB/Web_Intro.assets/styles.png)
 
 - computed : 해당 요소에 최종 계산된 CSS
 
-![image-20220901171515374](C:\Users\726jo\AppData\Roaming\Typora\typora-user-images\image-20220901171515374.png)
+![](https://github.com/forwardyoung/TIL/blob/master/WEB/Web_Intro.assets/computed.png)
 
 ---
 
