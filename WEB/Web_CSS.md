@@ -90,7 +90,7 @@ p { color : hsla(120, 100% 0.5); }
 - CSS는 상속을 통해 부모 요소의 속성을 자식에게 상속한다.
 
   - 속성(프로퍼티) 중에는 상속이 되는 것과 되지 않는 것들이 있다.
-  - 상속 되는 것
+  - 상속되는 것
     - ex) Text 관련 요소(font, color, text-align), opacity, visibility 등
 
   - 상속 되지 않는 것
