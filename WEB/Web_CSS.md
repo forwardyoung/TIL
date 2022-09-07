@@ -10,7 +10,7 @@
   - 백분율 단위
   - 가변적인 레이아웃에서 자주 사용
 
-![image-20220905141609599](Web_CSS.assets/image-20220905141609599.png)
+![](https://github.com/forwardyoung/TIL/blob/master/WEB/Web_CSS.assets/1.png)
 
 - em
   - (바로 위, **부모 요소**에 대한) 상속의 영향을 받음
@@ -20,7 +20,7 @@
   - (바로 위, **부모 요소**에 대한) 상속의 영향을 받지 않음
   - **최상위 요소(html)**의 사이즈를 기준으로 배수 단위를 가짐
 
-![image-20220905143058015](Web_CSS.assets/image-20220905143058015.png)
+![](https://github.com/forwardyoung/TIL/blob/master/WEB/Web_CSS.assets/2.png)
 
 - viewport
 
@@ -105,7 +105,7 @@ p { color : hsla(120, 100% 0.5); }
 
 `CSS 원칙 1️⃣` : 모든 요소는 **네모(박스모델)**이고, 위에서부터 아래로, 왼쪽에서 오른쪽으로 쌓인다.
 
-![image-20220905162820380](Web_CSS.assets/image-20220905162820380.png)
+![](https://github.com/forwardyoung/TIL/blob/master/WEB/Web_CSS.assets/3.png)
 
 ➡️ **좌측 상단에 배치**
 
@@ -119,7 +119,7 @@ p { color : hsla(120, 100% 0.5); }
   - padding
   - content
 
-![image-20220905153458602](Web_CSS.assets/image-20220905153458602.png)
+![](https://github.com/forwardyoung/TIL/blob/master/WEB/Web_CSS.assets/4.png)
 
 ### ✔️ Box model 구성 (border)
 
@@ -137,7 +137,7 @@ p { color : hsla(120, 100% 0.5); }
 
 `상하좌우!`
 
-![image-20220905165318396](Web_CSS.assets/image-20220905165318396.png)
+![](https://github.com/forwardyoung/TIL/blob/master/WEB/Web_CSS.assets/%EC%83%81%ED%95%98%EC%A2%8C%EC%9A%B0.png)
 
 ### ✔️ box-sizing
 
