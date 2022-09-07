@@ -1,0 +1,41 @@
+<!-- .profile-image와 .profile-name에 vertical-align: middle;을 통해 프로필 사진과 네임이 한 줄에 수직정렬-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card {
+            border: 1px solid black;
+            width: 30rem;
+            height: 40rem;
+        }
+        .card-image {
+            width: 100%;
+            border-radius: 1rem;
+        }
+        .profile-image {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            vertical-align: middle;
+        }
+        .profile-name {
+      vertical-align: middle;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="card">
+        <img class="card-image" src="./moon.webp" alt="부엌">
+        <h3>산골 주택|부부의 놀이터가 된 달나무집</h3>
+        <div class="profile">
+            <img class="profile-image" src="./profile.webp" alt="프로필사진">
+            <span>달나무집</span>
+        </div>
+    </div>
+</body>
+</html>
