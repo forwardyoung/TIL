@@ -20,6 +20,8 @@
   - (바로 위, **부모 요소**에 대한) 상속의 영향을 받지 않음
   - **최상위 요소(html)**의 사이즈를 기준으로 배수 단위를 가짐
 
+  
+
 ![](https://github.com/forwardyoung/TIL/blob/master/WEB/Web_CSS.assets/2.png)
 
 - viewport
