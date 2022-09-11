@@ -1,0 +1,35 @@
+/* 아래에 CSS를 작성해주세요. */
+* {
+    box-sizing: border-box;
+  }
+  
+  .title {
+    text-align: center;
+  }
+  .subtext {
+    display: block;
+    font-size: 12px;
+  }
+
+  .item-list {
+    display: flex;
+    justify-content: center;
+    width: 900px;
+  }
+  
+  .item {
+    padding-top: 5%;
+    padding-right: 5%;
+    width: 300px;
+    margin: -4px;
+  }
+  
+  .item-img {
+    width: 100%;
+    border-radius: 5%;
+  }
+  
+  .item-subtitle {
+    color: rgb(132, 128, 128);
+    font-weight: bold;
+  }
