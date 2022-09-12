@@ -8,7 +8,7 @@
   }
   .subtext {
     display: block;
-    font-size: 12px;
+    font-size: 16px;
   }
 
   .item-list {
@@ -18,10 +18,10 @@
   }
   
   .item {
-    padding-top: 5%;
-    padding-right: 5%;
     width: 300px;
+    display: inline-block;
     margin: -4px;
+    /*inline-block 간 4px 공백 존재*/
   }
   
   .item-img {
