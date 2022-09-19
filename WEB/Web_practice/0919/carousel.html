@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .carousel-items {
+        position: relative;
+        display: flex; /* carousel-item 1~4가 모두 한 줄에*/
+        width: 10rem;
+        height: 10rem;
+        overflow: hidden; /* 넘친 콘텐츠는 잘려지고 보이지 않음 -- 튀는 느낌의 애니메이션 효과 잡아줌*/
+      }
+      .carousel-item {
+        position: absolute;
+        top: 0;
+        width: 10rem;
+        height: 10rem;
+        background-color: bisque;
+        display: none;
+      }
+      .active {
+        display: block;
+        animation: active 1.5s;
+      }
+
+      /* 키 프레임(keyframe)에는 특정한 시간에 해당 요소가 가져야 할 CSS 스타일을 명시 */
+      /* translateX() => 가로로 이동 (+값 오른쪽 -값 왼쪽) , translateY() => 세로로 이동 (+값 아래쪽 -값 위쪽) */
+      @keyframes active {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="carousel-items">
+        <div class="carousel-item active">1</div>
+        <div class="carousel-item">2</div>
+        <div class="carousel-item">3</div>
+        <div class="carousel-item">4</div>
+      </div>
+    </div>
+    <button id="preBtn">previous</button>
+    <button id="nextBtn">next</button>
+    <script>
+      const nextBtn = document.querySelector('#nextBtn')
+      nextBtn.addEventListener('click', function () {
+        // 지금 active인 것은 어떻게 알죠?
+        const currentElement = document.querySelector('.active')
+        // 전체 item 중에....... 이 Element의 인덱스?
+        const items = document.querySelectorAll('.carousel-item')
+        const idx = [...items].indexOf(currentElement)
+        console.log(currentElement, items, idx)
+        currentElement.classList.toggle('active')
+        items[(idx + 1) % items.length].classList.toggle('active')
+      })
+      // 이전버튼추가
+      const preBtn = document.querySelector('#preBtn')
+      preBtn.addEventListener('click', function () {
+        // 지금 active인 것은 어떻게 알죠?
+        const currentElement = document.querySelector('.active')
+        // 전체 item 중에....... 이 Element의 인덱스?
+        const items = document.querySelectorAll('.carousel-item')
+        const idx = [...items].indexOf(currentElement)
+        console.log(currentElement, items, idx)
+        currentElement.classList.toggle('active')
+        items[(items.length + idx - 1) % items.length].classList.toggle(
+          'active')
+      })
+    </script>
+  </body>
+</html>
