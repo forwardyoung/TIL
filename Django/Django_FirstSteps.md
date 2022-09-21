@@ -40,7 +40,7 @@
 
  ✔️`python -m venv [가상 환경]`
 
-​	![](https://github.com/forwardyoung/TIL/blob/master/Django/Django_FirstSteps.assets/5.png)
+​     ![](https://github.com/forwardyoung/TIL/blob/master/Django/Django_FirstSteps.assets/5.png)
 
 6. 가상 환경 폴더가 생성된 것을 확인할 수 있다.
 
