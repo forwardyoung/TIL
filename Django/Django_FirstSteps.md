@@ -78,7 +78,9 @@
 
 9. Django 프로젝트를 시작한다.
 
- ✔️ `django-admin startproject [프로젝트 이름] [시작 경로]`
+ ✔️ `django-admin startproject [프로젝트 이름] [시작 경로] .`
+
+​	⚠️ '.' (dot)을 붙이지 않을 경우 현재 디렉토리에 프로젝트 디렉토리를 새로 생성하게 됨.
 
 ![](https://github.com/forwardyoung/TIL/blob/master/Django/Django_FirstSteps.assets/11.png)
 
