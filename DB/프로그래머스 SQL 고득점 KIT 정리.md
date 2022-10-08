@@ -35,7 +35,7 @@ SELECT ANIMAL_ID, NAME FROM ANIMAL_INS WHERE INTAKE_CONDITION <> 'Aged' ORDER BY
 
   ✔️ 3가지 조건
 
-  1) 생일이 3월 ➡️ MONTH(DATE) : 지정된 날짜의 월 부분을 나타내는 정수를 반환
+  1) 생일이 3월 ➡️ `MONTH(DATE)` : 지정된 날짜의 월 부분을 나타내는 정수를 반환
   2) 성별이 여성
   3) 전화번호 NULL이면 안 됨
 
@@ -47,9 +47,9 @@ AND TLNO IS NOT NULL # 조건 3
 ORDER BY MEMBER_ID;
 ```
 
-🔎 DAY(DATE) : 지정된 날짜의 일 부분을 나타내는 정수를 반환	
+📍`DAY(DATE)` : 지정된 날짜의 일 부분을 나타내는 정수를 반환	
 
-🔎 YEAR(DATE) : 지정된 날짜의 연도 부분을 나타내는 정수를 반환
+📍`YEAR(DATE)` : 지정된 날짜의 연도 부분을 나타내는 정수를 반환
 
 - `FOOD_FACTORY` 테이블에서 **강원도에 위치**한 식품공장의 공장 ID, 공장 이름, 주소를 조회하는 SQL문
 
@@ -62,7 +62,7 @@ SELECT FACTORY_ID, FACTORY_NAME, ADDRESS FROM FOOD_FACTORY WHERE ADDRESS LIKE '�
 # 강원도에 위치한 식품공장은 ADDRESS가 '강원도'로 시작 혹은 '강원도'를 포함해야 한다. LIKE '강원도%' 또는 LIKE '%강원도%'
 ```
 
-- `REST_INFO`와 `REST_REVIEW` 테이블에서 서울에 위치한 식당들의 식당 ID, 식당 이름, 음식 종류, 즐겨찾기수, 주소, 리뷰 평균 점수를 조회하는 SQL문
+- `REST_INFO`와 `REST_REVIEW` 테이블에서 **서울에 위치**한 식당들의 식당 ID, 식당 이름, 음식 종류, 즐겨찾기수, 주소, 리뷰 평균 점수를 조회하는 SQL문
 
   이때 **리뷰 평균점수는 소수점 세 번째 자리에서 반올림**, **결과는 평균점수를 기준으로 내림차순 정렬**, **평균점수가 같다면 즐겨찾기수를 기준으로 내림차순 정렬**
 
@@ -76,7 +76,7 @@ SELECT FACTORY_ID, FACTORY_NAME, ADDRESS FROM FOOD_FACTORY WHERE ADDRESS LIKE '�
 
 `REST_REVIEW` 테이블
 
-| EVIEW_ID   | REST_ID | MEMBER_ID             | REVIEW_SCORE | REVIEW_TEXT                          | REVIEW_DATE |
+| REVIEW_ID  | REST_ID | MEMBER_ID             | REVIEW_SCORE | REVIEW_TEXT                          | REVIEW_DATE |
 | ---------- | ------- | --------------------- | ------------ | ------------------------------------ | ----------- |
 | R000000065 | 00028   | `soobin97@naver.com`  | 5            | 부찌 국물에서 샤브샤브 맛이나고 깔끔 | 2022-04-12  |
 | R000000066 | 00039   | `yelin1130@gmail.com` | 5            | 김치찌개 최곱니다.                   | 2022-02-12  |
@@ -89,3 +89,31 @@ SQL을 실행하면 다음과 같이 출력돼야 한다.
 | REST_ID | REST_NAME | FOOD_TYPE | FAVORITES | ADDRESS                            | SCORE |
 | ------- | --------- | --------- | --------- | ---------------------------------- | ----- |
 | 00035   | 삼촌식당  | 일식      | 80        | 서울특별시 강서구 가로공원로76가길 | 4.50  |
+
+```sql
+SELECT A.REST_ID, A.REST_NAME, A.FOOD_TYPE, A.FAVORITES, A.ADDRESS,
+ROUND(AVG(B.REVIEW_SCORE), 2) AS SCORE # 리뷰의 평균점수를 소수점 세번째에서 반올림하고 이를 SCORE라고 명명한다.
+FROM REST_INFO A INNER JOIN REST_REVIEW B ON A.REST_ID = B.REST_ID
+WHERE A.ADDRESS LIKE '서울%' # 조건 : 식당의 위치가 서울이어야 한다. ADDRESS는 A 테이블에 있는 컬럼이고, '서울'로 시작해야 함.
+GROUP BY A.REST_ID # REST_ID별로 SELECT 한다.
+ORDER BY SCORE DESC, A.FAVORITES DESC; # 즐겨찾기는 A 테이블에 있는 컬럼이므로 앞에 테이블을 명시해야 함
+```
+
+📍`INNER JOIN` : **결합 조건을 만족하는 데이터만 선택**해 두 테이블을 결합
+
+```sql
+SELECT * FROM Reservation JOIN Customer ON Reservation.Name = Customer.Name;
+```
+
+📍테이블의 이름이 길거나 복잡한 경우에는 별칭(alias)을 사용하여 SQL 구문을 간략화할 수 있다.
+
+```sql
+SELECT *
+FROM Reservation AS r, Customer AS c
+WHERE r.Name = c.Name;
+```
+
+📍집계함수(AVG(), MAX(), MID() 는 주로 GROUP BY절과 함께 쓰이며 데이터를 그룹화해주는 기능을 한다.
+
+📍`GROUP BY` 절에 사용된 필드의 이름은 반드시 **SELECT 문에도 같이 명시**되어야 한다.
+
