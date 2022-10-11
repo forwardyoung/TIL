@@ -144,14 +144,15 @@ $ python manage.py migrate
 
 ```
 $ pip install django-extensions
+$ pip install ipython
+```
+
+```
+$ pip freeze > requirements.txt
 ```
 
 ```
 $ python manage.py shell_plus
-```
-
-```
-$ pip install ipython
 ```
 
 ### User model 활용하기
@@ -160,7 +161,7 @@ $ pip install ipython
 
 > `User.objects.create(username='bbb', password='asdf')` ❓❔
 >
-> 📍 password를 암호화하는 로직이 필요!
+> 📍 password를 암호화하는 logic이 필요!
 
 > 암호 관리
 
