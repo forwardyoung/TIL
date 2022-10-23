@@ -249,11 +249,114 @@ urlpatterns = [
 ]
 ```
 
+url로 전송하기 위해 action에서 지정!
+
+```
+<form action="/articles/create/">
+```
+
+📍url을 변수로 관리하기 위해 다음과 같이 form을 입력한다.
+
+```
+<!-- form : 사용자에게 양식을 제공하고 값을 받아서(input : name, value) 서버에 전송(action)-->
+<form action="{% url 'articles:create' %}"> 📍url을 변수로 관리 
+```
+
+수많은 정보가 `request`라는 객체에 있고 우리는 그것을 꺼내서 쓸 수 있다.
+
+
+
+#### 1-2. 입력받은 데이터 처리
+
+```
+http://localhost:8000/articles/create/
+```
+
+- 게시글 DB에 생성하고 index 페이지로 redirect
+
+```
+from django.shortcuts import render, redirect
+from .models import Article
+
+def create(request):
+    # DB에 저장하는 로직
+    title = request.GET.get('title')
+    content = request.GET.get('content')
+    Article.objects.create(title=title, content=content)
+    return redirect('articles:index') # 목록 페이지로 돌아가!
+```
+
+`from .models import Article` : 지금 내 앱 `models.py`에 있는 `Article` 클래스를 import 하겠다!
+
+
+
+### 2. 게시글 목록
+
+> DB에서 게시글을 가져와서, template에 전달
+
+```
+# 요청 정보를 받아서
+def index(request):
+    # 게시글을 가져와서
+    articles = Article.objects.all() 
+    # template에 전달한다.
+    context = {
+        'articles':articles
+    }
+    return render(request, 'articles/index.html', context)
+```
+
+![image-20221023155835486](C:\Users\726jo\AppData\Roaming\Typora\typora-user-images\image-20221023155835486.png)
+
+`articles` : 모든 article을 의미
+
+`articles = Article.objects.order_by('-pk') ` : 게시판의 글 목록은 최신글이 위에 보이기 때문에 '-pk'로 내림차순 정렬
+
+![A basic HTTP request](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview/http_request.png)
+
+[🔎 HTTP 요청 메서드](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
+
+> Article 객체를 **조회** ➡️ `GET`
+>
+> Article 객체를 form을 통해 **제출** ➡️ `POST`
+
+```
+<form action="{% url 'articles:create' %}" method="POST">
+    <label for="title">제목 : </label>
+    <input type="text" name="title" id="title">
+    <label for="content">내용 : </label>
+    <textarea name="content" id="content" cols="30" rows="10"></textarea>
+    <input type="submit" value="글쓰기">
+</form>
+```
+
+`<form>`에서 `POST` 메서드를 사용하였다면 다음과 같이 `csrf_token`을 사용해야 한다!
+
+```
+<form method="post">
+{% csrf_token %}
+```
+
+⚠️ POST 메서드를 사용하였으니, view에서도 POST 메서드를 통해 DB에 저장한다.
+
+```
+def create(request):
+	title = request.GET.get('title')
+```
+
+위처럼 GET 메서드를 사용하게 되면, `None`이 되어
+
+`NOT NULL constraint failed: articles_article.title` 에러가 발생한다.
+
+![image-20221023165156859](C:\Users\726jo\AppData\Roaming\Typora\typora-user-images\image-20221023165156859.png)
+
+`POST` : 메일 작성, 평점 등록 등 
 
 
 
 
----
+
+
 
 ### References
 
