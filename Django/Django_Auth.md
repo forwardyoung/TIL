@@ -206,14 +206,22 @@ def signup(request):
 	return render(request, 'accounts/signup.html')
 ```
 
+> signup에 form 적용
+
 - accounts앱 - templates 폴더 - accounts 폴더 - `signup.html`
 
 ```
 {% extends 'base.html' %}
-{% load django_bootstrap5 %} # bootstrap 적용
+{% load django_bootstrap5 %} <!-- bootstrap 적용 -->
 
 {% block body %}
-{{ form.as_p}} # bootstrap 코드로 바꿔도 됨
+<h1>회원가입</h1>
+<!--{{ form.as_p }} 폼의 각 필드를 p 태그 안에서 레이블과 텍스트로 배치-->
+<form action="" method="POST"> <!-- 내 정보를 DB에 저장 : method는 'POST' -->
+    {% csrf_token %} <!-- CSRF (Cross Site Request Forgeries)는 웹 해킹 기법의 하나로 Django는 이를 방지하기 위한 기능을 기본적으로 제공. Django에서 HTTP POST, PUT, DELETE을 할 경우 이 태그를 넣어 주어야 한다.-->
+    {% bootstrap_form form %}
+    {% bootstrap_button button_type="submit" content="OK" %}
+</form>
 
 {% endblock body %}
 ```
@@ -233,7 +241,7 @@ def signup(request):
 	return render(request, 'accounts/signup.html', context)
 ```
 
-> POST 요청 처리
+> POST 요청 처리 위해 위 `views.py`에서 코드 추가
 
 - accounts 앱의 `views.py`
 
@@ -244,15 +252,15 @@ from django.contrib.auth.forms import UserCreationFrom
 def signup(request):
 	if request.method == 'POST':
 		form = UserCreationFrom(request.POST)
-		if form.is_valid():
-			form.save()
-			return redirect('articles:index')
-	else:
+		if form.is_valid(): # 유효성 검사를 통과하면
+			form.save() # 데이터 저장 후 
+			return redirect('accounts:index') # index 페이지로 리다이렉트
+	else: # 통과하지 못하면 
 		form = UserCreationForm()
 	context = {
 		'form': form
 	}
-	return render(request, 'accounts/signup.html', context)
+	return render(request, 'accounts/signup.html', context) # 회원가입 페이지로
 ```
 
 > 기존 UserCreationForm을 상속받아 User 모델 재정의
@@ -292,8 +300,20 @@ class CustomUserCreationFrom(UserCreationForm):
 
 	class Meta:
 		model = get_user_model()
-		fields = ('username', )
+		fields = ['username', 'email', 'password1', 'password2']
+		# fields = '__all__' => form을 만들 때 모든 필드를 입력받는다.
 ```
+
+
+
+> CutstomUserCreationFomr()으로 대체하기
+
+- accounts 앱의 `views.py`
+
+```
+```
+
+
 
 ---
 
@@ -308,3 +328,9 @@ class CustomUserCreationFrom(UserCreationForm):
 `class Article(models.Model):` 직접 상속받아 만들었으나,
 
 `class User(AbstractUser):` django 내부에 있는 어느정도 만들어진 model을 상속받아 만들었다.
+
+
+
+---
+
+📍[`django html 자동완성 설정`](https://integer-ji.tistory.com/358)

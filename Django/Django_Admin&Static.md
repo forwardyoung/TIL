@@ -101,7 +101,7 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 - STATIC_ROOT 작성
 
 ```python
-$ python manage.ly collectstatic
+$ python manage.py collectstatic
 ```
 
 - collectstatic 명령어
@@ -119,7 +119,7 @@ $ python manage.ly collectstatic
 **bootstrap5 설치**
 
 ```python
-$ pip install django-bootstrap5
+    $ pip install django-bootstrap5
 ```
 
 - `settings.py` - `INSTALLED_APPS`에 'django_bootstrap5' 추가
