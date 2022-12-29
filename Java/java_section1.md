@@ -1,7 +1,7 @@
 ## 자바 프로그래밍
 (인프런 - 그림으로 배우는 자바, 파트1: 입문! 강의 요약)
 
-![](Java\Java.assets\intro.png)
+![](https://github.com/forwardyoung/TIL/blob/master/Java/Java.assets/intro.png?raw=true)
 
 - `println()` 메소드 : 소괄호 안의 **문자열을 출력**한다.
 
