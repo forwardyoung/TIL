@@ -4,6 +4,7 @@
 2. 멀티 플랫폼 언어 : 자바로 작성된 코드는 다양한 운영체제(UNIX, Window, MacOS, Android, etc..)에서 변경없이 동작
 3. 객체지향 언어
 
+
 > 객체 지향 프로그래밍 (Object-Oriented Programming, OOP) 이란?
 >
 > :  프로그래밍에서 필요한 데이터를 추상화 시켜 `상태와 행위를 가진 객체`로 만들고, 객체들간의 상호작용을 통해 로직을 구성하는 프로그래밍 방법
@@ -193,6 +194,34 @@ boolean isTasteGood = true;
 
 System.out.println("가격: " + price + "원");
 // => "가격: 35000원"
+```
+
+
+
+```java
+/* 1. 클래스 생성 */
+public class Information {
+/* 2. 메인 메소드 작성*/
+  public static void main(String[] args) {
+    /* 3. 변수 생성 및 초기화(초기값 설정) */
+    String name = "차밍";
+    int age = 1;
+    double weight = 5.8;
+    boolean isMale = true;
+    /* 4. 결과 출력 */
+    System.out.println("이름: " + name);
+    System.out.println("나이: " + age + "세");
+    System.out.println("몸무게: " + weight + "kg");
+    System.out.println("남성인가요? " + isMale);
+  }
+}
+
+/*
+이름: 차밍
+나이: 1세
+몸무게: 5.8kg
+남성인가요? true
+*/
 ```
 
 
