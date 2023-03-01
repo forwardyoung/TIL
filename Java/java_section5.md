@@ -101,3 +101,143 @@ int z = square(5); // 입력: 5 => 반환: 25
 System.out.println(z); // 25
 ```
 
+### 단일 파라미터 메소드
+
+> 입력 변수가 하나만 있는 메소드
+
+```java
+# 단일 파라미터 메소드 호출 예
+int x = square(4); // 입력값: 4 => 반환값: 16
+```
+
+- 메소드 호출 시 입력한 값은 입력 변수 즉, 파라미터로 대입된다.
+
+```java
+# 단일 파라미터 메소드 정의 예
+public static int square(int n) {
+  int result = n * n; // 변수 생성 및 제곱 값 대입
+  return result; // 값 반환
+}
+```
+
+**세제곱을 반환하는 cube() 메소드**
+
+```java
+public class CubeVolume {
+  // 프로그램 실행의 시작점
+  public static void main(String[] args) {    
+    // 변수 생성
+    int n = 3;
+
+    // 메소드 호출을 통한 값 계산
+    int x = cube(n);
+    
+    // 결과 출력
+    System.out.printf("%d의 세제곱 => %d", n, x);
+  }
+
+  // cube() : 입력값의 세제곱 반환하는 메소드
+  public static int cube(int num) {
+    // 변수 생성
+    int result;
+    
+    /* 2. 세제곱을 계산하시요 */
+    result = num * num * num;
+    
+    // 값 반환
+    return result;
+  }
+}
+/* 
+입력 : 3
+출력 : 3의 세제곱 => 27
+*/
+```
+
+### 다중 파라미터 메소드
+
+> 입력 변수가 2개 이상인 메소드
+
+![](https://github.com/forwardyoung/TIL/blob/master/Java/Java.assets/5-3.png)
+
+**원기둥의 부피 구하기**
+
+```java
+public class CylinderVolume {
+  // 프로그램 실행의 시작점!
+  public static void main(String[] args) {
+    // 변수 생성
+    double r = 7.0;
+    double h = 5.0;
+
+    // 부피 계산
+    double v = volume(r, h);
+
+    // 결과 출력
+    System.out.printf("반지름이 %.1f, 높이가 %.1f인 원기둥의 부피: %.1f", r, h, v);
+  }
+
+  // 반지름과 높이를 입력받아 원기둥의 부피를 반환
+  public static double volume(double radius, double height) {
+    return Math.PI * radius * radius * height; 
+  }
+}
+/*
+입력 : 7.0 5.0
+출력 : 반지름이 7.0, 높이가 5.0인 원기둥의 부피: 769.7
+*/
+```
+
+### 타입 불일치 에러
+
+📍입력된 절달과 파라미터의 타입이 일치해야 한다.
+
+```java
+# 메소드 호출 예
+int x = foo(0.0); // double을 int로 대입 불가
+int y = foo("3"); // String을 int로 대입 불가
+# 메소드 정의 예
+public static int foo(int n) {
+  return n + n;
+}
+```
+
+📍반환값의 타입
+
+```java
+// ERROR: 6 => String (X)
+String z = foo(3);
+```
+
+캐스팅을 사용하여 출력 예와 같은 결과를 얻어보자.
+
+**출력 예** : `a = 9, b = 8`
+
+```java
+public class WhatIsWrong {
+  public static void main(String[] args) {
+    int a = square((int) 3.0); // 3.0 => 3
+    int b = (int) cube(2); // 8.0 => 8
+    System.out.printf("a = %d, b = %d\n", a, b);
+  }
+
+  public static int square(int n) {
+    return n * n;
+  }
+
+  public static double cube(double n) {
+    return n * n * n;
+  }
+}
+```
+
+### 파라미터가 없는 메소드
+
+
+
+### 리턴값이 없는 메소드
+
+
+
+
+
