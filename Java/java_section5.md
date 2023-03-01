@@ -4,11 +4,11 @@
 
 햄버거 세트 메뉴도 번호만 알려주면 주문이 된다.
 
-![image-20230301135733058](C:\Users\726jo\AppData\Roaming\Typora\typora-user-images\image-20230301135733058.png)
+![](https://github.com/forwardyoung/TIL/blob/master/Java/java_section5.md)
 
 프로그래밍 또한 마찬가지
 
-![image-20230301140032988](C:\Users\726jo\AppData\Roaming\Typora\typora-user-images\image-20230301140032988.png)
+![](https://github.com/forwardyoung/TIL/blob/master/Java/Java.assets/5-2.png)
 
 > 일련의 코드를 단순화한 문법을 **메소드**(methods)라고 한다.
 
