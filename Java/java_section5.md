@@ -4,7 +4,7 @@
 
 햄버거 세트 메뉴도 번호만 알려주면 주문이 된다.
 
-![](https://github.com/forwardyoung/TIL/blob/master/Java/java_section5.md)
+![](https://github.com/forwardyoung/TIL/blob/master/Java/Java.assets/5-1.png)
 
 프로그래밍 또한 마찬가지
 
