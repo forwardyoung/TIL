@@ -233,11 +233,193 @@ public class WhatIsWrong {
 
 ### 파라미터가 없는 메소드
 
+```java
+# 파라미터가 없는 메소드 호출 예
+int a = getTen();
+# 파라미터가 없는 메소드 정의 예
+public static int getTen() {
+  return 10;
+}
+```
 
+- `Math.random()` 메소드 : **0.0** 이상 **1.0** 미만의 임의 실수를 반환
+
+```java
+# 파라미터가 없는 메소드 호출 예
+double x = Math.random(); // 0.0 <= x < 1.0
+```
+
+- `Math.random()` 메소드를 사용하여, 1부터 10 사이의 임의 정수를 구하는 예
+
+```java
+double r = 10 * Math.random(); // 0.0 ~ 9.9999
+int temp = (int) r; // 0 ~ 9
+int n = temp + 1; // 1, 2, 3, ..., 10 중 하나
+```
+
+- 1~6 사이의 정수를 반환하는 `rollDie()` 메소드를 완성하여, 출력 예와 같은 결과를 반환하는 문제
+
+**출력 예**
+
+N은 1부터 6사이의 정수
+
+> 주사위의 눈: N
+
+```java
+public class Random {
+  public static void main(String[] args) {
+    // 메소드로부터 값을 반환
+    int x = rollDie();
+    
+    // 결과 출력
+    System.out.printf("주사위의 눈: %d", x);
+  }
+  
+  // 1~6 사이의 임의의 정수를 반환
+  public static int rollDie() {
+    double r = 6 * Math.random(); // => 6 * 0.0 ~ 0.999 = 0 ~ 5.999
+    int temp = (int) r; // r을 정수로 casting하면 0 ~ 5 
+    int n = temp + 1;
+    return n;
+  }
+}
+```
 
 ### 리턴값이 없는 메소드
 
+> void는 리턴이 없는 자료형
 
+- **void** 타입 메소드
 
+```java
+# 리턴값이 없는 메소드 호출 예
+printHello();
+# 리턴값이 없는 메소드 정의 예
+public static void printHello() {
+  System.out.println("Hello");
+  return;
+}
+```
 
+- **return** 키워드 생략
+
+```java
+public static void printHello() {
+  System.out.println("Hello");
+}
+```
+
+- 메인 메소드에서 다른 메소드를 호출하여, 출력 예와 같은 결과를 얻어야 한다.
+
+**출력 예**
+
+```
+라면을 사온다.
+물을 끓인다.
+라면을 넣는다.
+맛있게 먹는다.
+```
+
+```java
+public class Ramyun {
+  public static void main(String[] args) {
+    buy();
+    boil();
+    put();
+    eat();
+  }
+  
+  public static void boil() {
+    System.out.println("물을 끓인다.");
+  }
+  
+  public static void buy() {
+    System.out.println("라면을 사온다.");
+  }
+  
+  public static void eat() {
+    System.out.println("맛있게 먹는다.");
+  }
+  
+  public static void put() {
+    System.out.println("라면을 넣는다.");
+  }
+}
+```
+
+### 메소드의 중첩 호출
+
+- 메소드 안에서 또 다시 메소드를 호출할 수 있다.
+
+다음 **threeStar()** 메소드는 내부적으로 **oneStar()**를 3번 호출한다.
+
+```java
+# 메소드 정의 예
+public static void threeStar() {
+  oneStar();
+  oneStar();
+  oneStar();
+}
+public static void oneStar() {
+  System.out.printf("*");
+}
+
+*** // threeStar() 출력 
+```
+
+- 다음과 같은 직사각형이 출력되도록 하는 `drawRectangle()` 메소드
+
+```java
+* * * * * *
+*         *
+* * * * * *
+```
+
+```java
+public class ControlFlow {
+  public static void main(String[] args) {
+    drawRectangle();
+  }
+
+  public static void drawRectangle() {
+    /* 직사각형이 그려지도록 해당 메소드를 구현하세요. */
+    drawLine(); // 윗변
+    drawEdge(); // 중간
+    drawLine(); // 밑변
+  }
+
+  // 직선을 그리는 메소드
+  public static void drawLine() {
+    System.out.println("* * * * * *");
+  }
+
+  // 양 끝점을 그리는 메소드
+  public static void drawEdge() {
+    System.out.println("*         *");
+  }
+}
+```
+
+**칼로리 계산 문제**
+
+> 삼겹살 1인분의 무게는 180g이고, 또 삼겹살 1g의 칼로리가 5.179kcal 이다. 이를 참고하여 삼겹살 3인분의 칼로리를 소수점 이하 둘째 자리까지 출력하시오.
+
+```java
+public class Pork {
+  public static void main(String[] args) {
+    int num = 3; // 3인분에 대한 정보를 저장할 수 있는 변수 생성
+    double result = calculate(num); // 3인분에 대한 칼로리를 계산하는 메소드 호출
+    System.out.printf("삼겹살 %d인분: %.2f kcal", num, result);
+  }
+
+  /* 4. 칼로리 계산을 위한 메소드를 작성하시오. */
+  public static double calculate(int n) {
+    int gram = n * 180; // 1인분은 180g
+    double kcal = gram * 5.179; // 3인분을 kcal로 환산
+    return kcal;
+  }
+}
+
+삼겹살 3인분: 2796.66 kcal // 출력
+```
 
