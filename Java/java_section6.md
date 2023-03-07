@@ -2,7 +2,7 @@
 
 >  특정 조건을 기준으로 무언가를 결정할 때 사용하는 문법
 
-![image-20230307235136408](C:\Users\726jo\OneDrive\바탕 화면\TIL\Java\Java.assets\6-1.png)
+![](https://github.com/forwardyoung/TIL/blob/master/Java/Java.assets/6-1.png)
 
 ## if문
 
