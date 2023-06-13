@@ -80,7 +80,7 @@ JSON 형태로 들어오는 `request`의 `body`를 파이썬에서 읽어올 수
 
 
 
-![image-20230612105723190](C:\Users\USER\AppData\Roaming\Typora\typora-user-images\image-20230612105723190.png)![image-20230612105745550](C:\Users\USER\AppData\Roaming\Typora\typora-user-images\image-20230612105745550.png)
+![](https://github.com/forwardyoung/TIL/blob/master/Django/ORM_2.png)
 
 `search_customer_information.html`에서
 
@@ -90,7 +90,7 @@ JSON 형태로 들어오는 `request`의 `body`를 파이썬에서 읽어올 수
 
 
 
-![image-20230612172349889](C:\Users\USER\AppData\Roaming\Typora\typora-user-images\image-20230612172349889.png)
+![](https://github.com/forwardyoung/TIL/blob/master/Django/ORM_3.png)
 
 ```python
 package_product = Package_product.objects.filter(package_id_id=id, is_cancel="N").order_by("package_product_type", "package_product_goout", "product_name").values()
@@ -103,14 +103,13 @@ But, **Package_product** 모델에 해당 필드가 없으며, 언급된 Choices
 ```python
 detail_product_id, detail_product_id_id, id, is_cancel, office_id, office_id_id, package_id, package_id_id, package_product_number, product_count
 ```
-
-![image-20230612173814262](C:\Users\USER\AppData\Roaming\Typora\typora-user-images\image-20230612173814262.png)
+![](https://github.com/forwardyoung/TIL/blob/master/Django/ORM_4.png)
 
 package_product 모델
 
 
 
-![image-20230612173957399](C:\Users\USER\AppData\Roaming\Typora\typora-user-images\image-20230612173957399.png)
+![](https://github.com/forwardyoung/TIL/blob/master/Django/ORM_5.png)
 
 `detail_product`에 해당 필드가 있는 것 확인.
 
