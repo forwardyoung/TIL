@@ -27,7 +27,7 @@ iterable 객체에 해당 필드가 존재하는 데이터를 모두 반환
 
 
 
-![image-20230612152517846](C:\Users\USER\AppData\Roaming\Typora\typora-user-images\image-20230612152517846.png)
+![](https://github.com/forwardyoung/TIL/blob/master/Django/ORM_1.png)
 
 각 레코드가 전자책인지 일반책인지 추가로  출력하고자 한다.
 
