@@ -2,8 +2,7 @@
 
 python 내장 모듈인 Zipfile 모듈을 이용하여 간단한 이미지 폴더를 압축하였다.
 
-![image-20230703001629896](C:\Users\User\Desktop\zip_test_1.jpg)
-
+![](https://github.com/forwardyoung/TIL/blob/master/zip_test_1.jpg)
 ```python
 import os
 import zipfile
@@ -35,6 +34,6 @@ zip_folder(folder_path, zip_path)
 
 
 
-![image-20230703001703731](C:\Users\User\Desktop\zip_test_2.jpg)
+![](https://github.com/forwardyoung/TIL/blob/master/zip_test_2.jpg)
 
-바탕화면에 `cats.zip`이라는 압축 파일이 생성되었다!
+바탕화면에 `cats.zip`이라는 압축 파일이 성공적으로 생성되었다!
